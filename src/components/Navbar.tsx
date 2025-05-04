@@ -1,23 +1,12 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
     ['rgba(17, 24, 39, 0)', 'rgba(17, 24, 39, 0.8)']
   );
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { href: '#about', label: 'About' },
