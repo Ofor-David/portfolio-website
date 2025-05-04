@@ -7,6 +7,16 @@ const Hero = () => {
     threshold: 0.1,
   });
 
+  const handleDownloadResume = () => {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = '/cv.pdf'; // Path to your CV file in the public directory
+    link.download = 'David_Ofor_CV.pdf'; // The name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -74,15 +84,14 @@ const Hero = () => {
             >
               Get in Touch
             </motion.a>
-            <motion.a
+            <motion.button
+              onClick={handleDownloadResume}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
-              download
               className="bg-transparent border-2 border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-md text-lg font-medium transition-colors"
             >
               Download Resume
-            </motion.a>
+            </motion.button>
           </motion.div>
         </motion.div>
       </motion.div>

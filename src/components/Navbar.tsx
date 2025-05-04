@@ -15,6 +15,16 @@ const Navbar = () => {
     { href: '#contact', label: 'Contact' },
   ];
 
+  const handleDownloadCV = () => {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = '/cv.pdf'; // Path to your CV file in the public directory
+    link.download = 'David_Ofor_CV.pdf'; // The name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <motion.nav
       style={{ backgroundColor }}
@@ -52,6 +62,7 @@ const Navbar = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleDownloadCV}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
           >
             Download CV
