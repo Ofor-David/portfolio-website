@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -9,8 +8,8 @@ const skills = [
       { name: 'AWS', icon: 'aws' },
       { name: 'Terraform', icon: 'terraform' },
       { name: 'Docker', icon: 'docker' },
-/*       { name: 'CI/CD', icon: 'cicd' },
- */    ],
+      { name: 'CI/CD', icon: 'cicd' },
+    ],
   },
   {
     category: 'AWS Services',
@@ -38,8 +37,6 @@ const skills = [
       { name: 'Node.js', icon: 'node' },
       { name: 'mongoDB', icon: 'mongodb' },
       { name: 'Javascript', icon: 'js' },
-
-
     ],
   },
 ];
@@ -50,75 +47,46 @@ const Skills = () => {
     threshold: 0.1,
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const getIconPath = (iconName: string) => {
-    try {
-      // Try to import SVG first
-      const svgPath = `/icons/${iconName}.svg`;
-      // If SVG fails, fall back to PNG
-      const pngPath = `/icons/${iconName}.png`;
-      return svgPath;
-    } catch (error) {
-      return `/icons/${iconName}.png`;
-    }
-  };
-
   return (
-    <section id="skills" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section
+      id="skills"
+      className="py-20 bg-gray-100 dark:bg-gray-950 transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl font-bold text-center text-white mb-12"
-          >
-            Skills & Expertise
-          </motion.h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-12">
+            Skills
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {skills.map((category, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
-                className="bg-gray-800 rounded-lg p-6 shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md transition-colors duration-300"
               >
-                <h3 className="text-xl font-semibold mb-6 text-blue-400">
+                <h3 className="text-xl font-semibold mb-6 text-blue-600 dark:text-blue-400">
                   {category.category}
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   {category.items.map((skill, skillIndex) => (
                     <motion.div
                       key={skillIndex}
-                      variants={itemVariants}
-                      className="flex items-center gap-3 p-3 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={inView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.8, delay: (index * 0.2) + (skillIndex * 0.1) }}
+                      className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     >
                       <div className="w-6 h-6 flex-shrink-0">
                         <img
-                          src={getIconPath(skill.icon)}
+                          src={`/icons/${skill.icon}.svg`}
                           alt={skill.name}
                           className="w-full h-full object-contain"
                           onError={(e) => {
@@ -127,7 +95,7 @@ const Skills = () => {
                           }}
                         />
                       </div>
-                      <span className="text-gray-300">{skill.name}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
                     </motion.div>
                   ))}
                 </div>

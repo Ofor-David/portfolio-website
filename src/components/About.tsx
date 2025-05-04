@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -38,82 +39,41 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      ref={ref}
+      id="about"
+      className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-          >
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
             About Me
-          </motion.h2>
+          </h2>
+          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
+        </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="bg-gray-800 rounded-lg p-8 shadow-xl"
-          >
-            <p className="text-gray-300 text-lg mb-6">
-            I'm a motivated Computer Science undergraduate with hands-on experience in AWS, and cloud-native deployment. I specialize in building backend applications and implementing Infrastructure as Code (IaC) using Terraform.
-
-            My skill set includes working with key AWS services such as EC2, S3, Lambda, and modern tools like GitHub Actions and MongoDB Atlas. Beyond technical skills, I've led a tech accountability community, promoting collaboration and continuous growth.
-
-            I'm currently advancing my knowledge in DevOps, Cloud security and springboot.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 transition-colors duration-300">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              I am a passionate software developer with expertise in cloud infrastructure and DevOps practices. My journey in technology began with an interest in game development with Unity and C#, which later evolved into a deep interest in cloud computing and infrastructure automation.
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                variants={itemVariants}
-                className="bg-gray-700 rounded-lg p-6"
-              >
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">
-                  Experience
-                </h3>
-                <ul className="space-y-4">
-                  <li className="text-gray-300">
-                    <span className="font-medium">Founder & community lead</span> at TechCentrics
-                    <br />
-                    <span className="text-sm text-gray-400">2024 - Present</span>
-                  </li>
-                  {/* <li className="text-gray-300">
-                    <span className="font-medium">Full Stack Developer</span> at Web Solutions
-                    <br />
-                    <span className="text-sm text-gray-400">2018 - 2020</span>
-                  </li> */}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                variants={itemVariants}
-                className="bg-gray-700 rounded-lg p-6"
-              >
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">
-                  Education
-                </h3>
-                <div className="space-y-8">
-                  {education.map((edu, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemVariants}
-                      className="bg-gray-800 rounded-lg p-6 shadow-lg"
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-xl font-semibold text-white">{edu.degree}</h4>
-                        <span className="text-blue-400">{edu.date}</span>
-                      </div>
-                      <p className="text-gray-400 mb-2">{edu.school}</p>
-                    
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              With experience in AWS, Terraform, and Docker, I specialize in building scalable and reliable cloud solutions. I believe in the power of automation and infrastructure as code to create efficient and maintainable systems.
+            </p>
+            <p className="text-gray-600 dark:text-gray-300">
+              When I'm not coding, I enjoy photography, playing the guitar, listening to cybersecurity podcasts and learning new technologies.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

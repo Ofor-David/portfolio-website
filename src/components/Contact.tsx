@@ -1,5 +1,27 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
+const contactLinks = [
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/david-ofor-23bb75354',
+    icon: '/icons/linkedin.svg',
+    color: 'hover:bg-blue-600',
+  },
+  {
+    name: 'Email',
+    url: 'mailto:davidoforincloud@gmail.com',
+    icon: '/icons/gmail.svg',
+    color: 'hover:bg-red-600',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/Ofor-David',
+    icon: '/icons/github.svg',
+    color: 'hover:bg-gray-800',
+  },
+];
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -7,97 +29,53 @@ const Contact = () => {
     threshold: 0.1,
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const contactLinks = [
-    {
-      name: 'LinkedIn',
-      icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/david-ofor-23bb75354/',
-      color: 'hover:text-blue-500',
-      hoverColor: 'group-hover:bg-blue-500/10',
-    },
-    {
-      name: 'Email',
-      icon: 'gmail',
-      url: 'mailto:davidoforincloud@gmail.com',
-      color: 'hover:text-red-500',
-      hoverColor: 'group-hover:bg-red-500/10',
-    },
-
-  ];
-
   return (
-    <section id="contact" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section
+      ref={ref}
+      id="contact"
+      className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl font-bold text-center text-white mb-12"
-          >
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
             Get in Touch
-          </motion.h2>
-          <div className="flex flex-wrap justify-center gap-8 max-w-2xl">
+          </h2>
+          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactLinks.map((link, index) => (
               <motion.a
-                key={index}
-                variants={itemVariants}
+                key={link.name}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-lg transition-all duration-300 ${link.color} ${link.hoverColor} w-40`}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                }}
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className={`group bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md flex flex-col items-center text-center transition-all duration-300 ${link.color} hover:scale-105`}
               >
-                <motion.div 
-                  className="w-12 h-12 mb-4"
-                  whileHover={{ scale: 1.15 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <div className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform duration-300">
                   <img
-                    src={`/icons/${link.icon}.svg`}
+                    src={link.icon}
                     alt={link.name}
                     className="w-full h-full object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = `/icons/${link.icon}.png`;
-                    }}
                   />
-                </motion.div>
-                <motion.span 
-                  className="text-white text-lg font-medium"
-                  whileHover={{ scale: 1.05 }}
-                >
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white group-hover:text-white transition-colors duration-300">
                   {link.name}
-                </motion.span>
+                </h3>
               </motion.a>
             ))}
           </div>

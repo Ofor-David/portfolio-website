@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -48,70 +49,71 @@ const Certifications = () => {
   };
 
   return (
-    <section id="certifications" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section
+      ref={ref}
+      id="certifications"
+      className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl font-bold text-center text-white mb-12"
-          >
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
             Certifications
-          </motion.h2>
-          <div className="flex flex-wrap justify-center gap-8 max-w-6xl">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full w-96"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 flex-shrink-0">
-                    <img
-                      src={`/icons/${cert.icon}.svg`}
-                      alt={cert.issuer}
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `/icons/${cert.icon}.png`;
-                      }}
-                    />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-semibold text-white break-words">{cert.name}</h3>
-                  </div>
+          </h2>
+          <div className="w-24 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={cert.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-300"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 flex-shrink-0">
+                  <img
+                    src={`/icons/${cert.icon}.svg`}
+                    alt={cert.issuer}
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `/icons/${cert.icon}.png`;
+                    }}
+                  />
                 </div>
-                <div className="mt-auto space-y-2">
-                  <p className="text-gray-300">
-                    <span className="font-medium">Issuer:</span> {cert.issuer}
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                    {cert.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-1">
+                    Issued by: {cert.issuer}
                   </p>
-                  <p className="text-gray-300">
-                    <span className="font-medium">Issued:</span> {cert.date}
+                  <p className="text-gray-600 dark:text-gray-300 mb-1">
+                    Issued: {cert.date}
                   </p>
-                  <p className="text-gray-300">
-                    <span className="font-medium">Credential ID:</span> {cert.credentialId}
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Credential ID: {cert.credentialId}
                   </p>
                   {cert.verifyUrl && (
-                    <motion.a
+                    <a
                       href={cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors inline-flex items-center gap-1"
                     >
-                      <span>Verify Credential</span>
+                      Verify Credential
                       <svg
-                        className="w-4 h-4 ml-1"
+                        className="w-4 h-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           strokeLinecap="round"
@@ -120,13 +122,13 @@ const Certifications = () => {
                           d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                         />
                       </svg>
-                    </motion.a>
+                    </a>
                   )}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
