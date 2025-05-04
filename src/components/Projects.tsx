@@ -7,28 +7,24 @@ const projects = [
     title: 'Serverless 3-Tier Application',
     description: 'A serverless 3-Tier application deployed on AWS Lambda using Terraform, featuring JWT authentication, MongoDB Atlas integration, and scalable infrastructure.',
     technologies: ['Terraform', 'AWS Lambda', 'S3', 'CloudFront', 'MERN Stack'],
-    image: '/project1.jpg',
     github: 'https://github.com/Ofor-David/serverless_mern_app',
   },
   {
     title: 'Task Management App',
     description: 'A containerized task management app with basic CRUD operations and user authentication. Deployed on EC2 with auto scaling and load balancing',
     technologies: ['Terraform', 'Nginx', 'Docker', 'EC2', 'ASG', 'ALB', 'S3', 'CloudFront', 'MERN Stack'],
-    image: '/project2.jpg',
     github: 'https://github.com/Ofor-David/TasksAPP',
   },
   {
     title: 'Bank Simulation App ',
     description: 'A simple yet functional banking system written in Java that allows users to create and manage accounts, deposit and withdraw funds, view account balances and details, and track their complete transaction history. It\'s designed to simulate core banking operations in an intuitive and user-friendly way.',
     technologies: ['Java', 'OOP'],
-    image: '/project4.jpg',
     github: 'https://github.com/Ofor-David/Bank-Simulation-App',
   },
   {
     title: 'Linux Server Setup',
     description: 'A Linux server setup and monitoring scriptfor a web application written in bash.',
     technologies: ['Bash', 'Linux'],
-    image: '/project3.jpg',
     github: 'https://github.com/Ofor-David/linux-server-automation',
   },
 ];

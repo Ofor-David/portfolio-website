@@ -92,6 +92,7 @@ const Skills = () => {
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.src = `/icons/${skill.icon}.png`;
+                            target.onerror = null; // Prevent infinite loop
                           }}
                         />
                       </div>
