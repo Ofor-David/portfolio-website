@@ -7,6 +7,7 @@ import Hero from './components/Hero'
 const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects.tsx'));
 const Skills = lazy(() => import('./components/Skills.tsx'));
+const Certifications = lazy(() => import('./components/Certifications.tsx'));
 const Contact = lazy(() => import('./components/Contact.tsx'));
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <About />
           <Projects />
           <Skills />
+          <Certifications />
           <Contact />
         </Suspense>
       </main>
