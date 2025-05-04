@@ -28,6 +28,15 @@ const About = () => {
     },
   };
 
+  const education = [
+    {
+      degree: 'Bachelor of Science in Computer Science',
+      school: 'Nnamdi Azikiwe University',
+      date: '2024 - 2027',
+    },
+ 
+  ];
+
   return (
     <section id="about" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,10 +59,11 @@ const About = () => {
             className="bg-gray-800 rounded-lg p-8 shadow-xl"
           >
             <p className="text-gray-300 text-lg mb-6">
-              I'm a passionate Full Stack Developer with a strong focus on creating
-              efficient, scalable, and user-friendly applications. With expertise in
-              modern web technologies and a keen eye for design, I strive to build
-              solutions that not only meet but exceed user expectations.
+            I'm a motivated Computer Science undergraduate with hands-on experience in AWS, and cloud-native deployment. I specialize in building backend applications and implementing Infrastructure as Code (IaC) using Terraform.
+
+            My skill set includes working with key AWS services such as EC2, S3, Lambda, and modern tools like GitHub Actions and MongoDB Atlas. Beyond technical skills, I've led a tech accountability community, promoting collaboration and continuous growth.
+
+            I'm currently advancing my knowledge in DevOps, Cloud security and springboot.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -66,15 +76,15 @@ const About = () => {
                 </h3>
                 <ul className="space-y-4">
                   <li className="text-gray-300">
-                    <span className="font-medium">Senior Developer</span> at Tech Corp
+                    <span className="font-medium">Founder & community lead</span> at TechCentrics
                     <br />
-                    <span className="text-sm text-gray-400">2020 - Present</span>
+                    <span className="text-sm text-gray-400">2024 - Present</span>
                   </li>
-                  <li className="text-gray-300">
+                  {/* <li className="text-gray-300">
                     <span className="font-medium">Full Stack Developer</span> at Web Solutions
                     <br />
                     <span className="text-sm text-gray-400">2018 - 2020</span>
-                  </li>
+                  </li> */}
                 </ul>
               </motion.div>
 
@@ -85,18 +95,22 @@ const About = () => {
                 <h3 className="text-xl font-semibold mb-4 text-blue-400">
                   Education
                 </h3>
-                <ul className="space-y-4">
-                  <li className="text-gray-300">
-                    <span className="font-medium">Master's in Computer Science</span>
-                    <br />
-                    <span className="text-sm text-gray-400">University of Technology</span>
-                  </li>
-                  <li className="text-gray-300">
-                    <span className="font-medium">Bachelor's in Software Engineering</span>
-                    <br />
-                    <span className="text-sm text-gray-400">Tech University</span>
-                  </li>
-                </ul>
+                <div className="space-y-8">
+                  {education.map((edu, index) => (
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      className="bg-gray-800 rounded-lg p-6 shadow-lg"
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="text-xl font-semibold text-white">{edu.degree}</h4>
+                        <span className="text-blue-400">{edu.date}</span>
+                      </div>
+                      <p className="text-gray-400 mb-2">{edu.school}</p>
+                    
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </motion.div>
