@@ -2,13 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/cv.pdf';
-    link.download = 'David_Ofor_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleViewResume = () => {
+    window.open('https://drive.google.com/file/d/1s-Q2xh3Xly3eQjQ2D7eB95bqFgrGlQnW/view?usp=drive_link', '_blank');
   };
 
   return (
@@ -47,10 +42,10 @@ const Hero = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={handleDownloadResume}
+            onClick={handleViewResume}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg font-medium transition-colors"
           >
-            Download Resume
+            View Resume
           </motion.button>
         </motion.div>
       </motion.div>
