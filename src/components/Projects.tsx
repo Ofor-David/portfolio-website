@@ -4,6 +4,18 @@ import { useInView } from 'react-intersection-observer';
 
 const projects = [
   {
+    title: 'AWS-Alert-System',
+    description: 'Detects risky actions (like creating users or disabling logging) and runs serverless log analysis with AWS Lambda and then send real-time email alerts via SNS',
+    technologies: ['Terraform', 'AWS Lambda','S3', 'cloudTrail','SNS', 'IAM', 'github actions', 'Python'],
+    github: 'https://github.com/Ofor-David/aws-alert-system.git',
+  },
+  {
+    title: 'Portfolio Website',
+    description: 'A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS for a modern and responsive design.',
+    technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Cursor', 'Netlify'],
+    github: 'https://github.com/Ofor-David/portfolio-website.git',
+  },
+  {
     title: 'Serverless 3-Tier Application',
     description: 'A serverless 3-Tier application deployed on AWS Lambda using Terraform, featuring JWT authentication, MongoDB Atlas integration, and scalable infrastructure.',
     technologies: ['Terraform', 'AWS Lambda', 'S3', 'CloudFront', 'MERN Stack'],
