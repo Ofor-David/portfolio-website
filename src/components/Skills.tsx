@@ -42,6 +42,7 @@ const skills = [
       { name: 'Javascript', icon: 'js' },
       { name: 'notion', icon: 'notion' },
       { name: 'vscode', icon: 'vscode' },
+      { name: 'Trivy', icon: 'trivy' },
     ],
   },
 ];

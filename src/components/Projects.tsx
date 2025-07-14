@@ -10,6 +10,13 @@ const projects = [
     github: 'https://github.com/Ofor-David/aws-alert-system.git',
   },
   {
+    title: 'The-Docker-Hardening-Project',
+    description: 'This project demonstrates how to containerize a FastAPI application using Docker, then progressively harden the container image and secure the CI/CD pipeline using real-world DevSecOps practices.',
+    technologies: ['Docker','GitHub actions', 'Trivy', 'Python', 'FastApi'],
+    github: 'https://github.com/Ofor-David/the-docker-hardening-project.git',
+  },
+
+  {
     title: 'Portfolio Website',
     description: 'A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS for a modern and responsive design.',
     technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Cursor', 'Netlify'],
