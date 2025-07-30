@@ -4,47 +4,89 @@ import { useInView } from 'react-intersection-observer';
 
 const projects = [
   {
-    title: 'AWS-Alert-System',
-    description: 'Detects risky actions (like creating users or disabling logging) and runs serverless log analysis with AWS Lambda and then send real-time email alerts via SNS',
-    technologies: ['Terraform', 'AWS Lambda','S3', 'cloudTrail','SNS', 'IAM', 'github actions', 'Python'],
-    github: 'https://github.com/Ofor-David/aws-alert-system.git',
+    title: "AWS-Alert-System",
+    description:
+      "Detects risky actions (like creating users or disabling logging) and runs serverless log analysis with AWS Lambda and then send real-time email alerts via SNS",
+    technologies: [
+      "Terraform",
+      "AWS Lambda",
+      "S3",
+      "cloudTrail",
+      "SNS",
+      "IAM",
+      "github actions",
+      "Python",
+    ],
+    github: "https://github.com/Ofor-David/aws-alert-system.git",
   },
   {
-    title: 'The-Docker-Hardening-Project',
-    description: 'This project demonstrates how to containerize a FastAPI application using Docker, then progressively harden the container image and secure the CI/CD pipeline using real-world DevSecOps practices.',
-    technologies: ['Docker','GitHub actions', 'Trivy', 'Python', 'FastApi'],
-    github: 'https://github.com/Ofor-David/the-docker-hardening-project.git',
+    title: "Start-Smart",
+    description:
+      "StartSmart is a cloud-native, serverless platform designed to ingest, store, and analyze user activity data at scale. The goal is to provide product and marketing teams with insight into user behavior with minimal infrastructure overhead.",
+    technologies: [
+      "Terraform",
+      "AWS Lambda",
+      "Kinesis Firehose",
+      "S3",
+      "Amazon EventBridge",
+      "AWS Glue Crawler",
+      "Amazon Athena",
+      "Python",
+    ],
+    github: "https://github.com/Ofor-David/start-smart.git",
+  },
+  {
+    title: "The-Docker-Hardening-Project",
+    description:
+      "This project demonstrates how to containerize a FastAPI application using Docker, then progressively harden the container image and secure the CI/CD pipeline using real-world DevSecOps practices.",
+    technologies: ["Docker", "GitHub actions", "Trivy", "Python", "FastApi"],
+    github: "https://github.com/Ofor-David/the-docker-hardening-project.git",
   },
 
   {
-    title: 'Portfolio Website',
-    description: 'A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS for a modern and responsive design.',
-    technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Cursor', 'Netlify'],
-    github: 'https://github.com/Ofor-David/portfolio-website.git',
+    title: "Portfolio Website",
+    description:
+      "A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS for a modern and responsive design.",
+    technologies: ["React", "Tailwind CSS", "TypeScript", "Cursor", "Netlify"],
+    github: "https://github.com/Ofor-David/portfolio-website.git",
   },
   {
-    title: 'Serverless 3-Tier Application',
-    description: 'A serverless 3-Tier application deployed on AWS Lambda using Terraform, featuring JWT authentication, MongoDB Atlas integration, and scalable infrastructure.',
-    technologies: ['Terraform', 'AWS Lambda', 'S3', 'CloudFront', 'MERN Stack'],
-    github: 'https://github.com/Ofor-David/serverless_mern_app',
+    title: "Serverless 3-Tier Application",
+    description:
+      "A serverless 3-Tier application deployed on AWS Lambda using Terraform, featuring JWT authentication, MongoDB Atlas integration, and scalable infrastructure.",
+    technologies: ["Terraform", "AWS Lambda", "S3", "CloudFront", "MERN Stack"],
+    github: "https://github.com/Ofor-David/serverless_mern_app",
   },
   {
-    title: 'Task Management App',
-    description: 'A containerized task management app with basic CRUD operations and user authentication. Deployed on EC2 with auto scaling and load balancing',
-    technologies: ['Terraform', 'Nginx', 'Docker', 'EC2', 'ASG', 'ALB', 'S3', 'CloudFront', 'MERN Stack'],
-    github: 'https://github.com/Ofor-David/TasksAPP',
+    title: "Task Management App",
+    description:
+      "A containerized task management app with basic CRUD operations and user authentication. Deployed on EC2 with auto scaling and load balancing",
+    technologies: [
+      "Terraform",
+      "Nginx",
+      "Docker",
+      "EC2",
+      "ASG",
+      "ALB",
+      "S3",
+      "CloudFront",
+      "MERN Stack",
+    ],
+    github: "https://github.com/Ofor-David/TasksAPP",
   },
   {
-    title: 'Bank Simulation App ',
-    description: 'A simple yet functional banking system written in Java that allows users to create and manage accounts, deposit and withdraw funds, view account balances and details, and track their complete transaction history. It\'s designed to simulate core banking operations in an intuitive and user-friendly way.',
-    technologies: ['Java', 'OOP'],
-    github: 'https://github.com/Ofor-David/Bank-Simulation-App',
+    title: "Bank Simulation App ",
+    description:
+      "A simple yet functional banking system written in Java that allows users to create and manage accounts, deposit and withdraw funds, view account balances and details, and track their complete transaction history. It's designed to simulate core banking operations in an intuitive and user-friendly way.",
+    technologies: ["Java", "OOP"],
+    github: "https://github.com/Ofor-David/Bank-Simulation-App",
   },
   {
-    title: 'Linux Server Setup',
-    description: 'A Linux server setup and monitoring scriptfor a web application written in bash.',
-    technologies: ['Bash', 'Linux'],
-    github: 'https://github.com/Ofor-David/linux-server-automation',
+    title: "Linux Server Setup",
+    description:
+      "A Linux server setup and monitoring scriptfor a web application written in bash.",
+    technologies: ["Bash", "Linux"],
+    github: "https://github.com/Ofor-David/linux-server-automation",
   },
 ];
 
