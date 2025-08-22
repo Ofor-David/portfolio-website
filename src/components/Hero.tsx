@@ -3,7 +3,10 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const handleViewResume = () => {
-    window.open('https://drive.google.com/file/d/1ShMX903GBv2mK15O4dd6gtKQD_gJRnlI/view?usp=sharing', '_blank');
+    window.open(
+      "https://drive.google.com/file/d/14NBdTfmX36sQp2uT3pr19wDmnvB98bzx/view?usp=sharing",
+      "_blank"
+    );
   };
 
   return (
