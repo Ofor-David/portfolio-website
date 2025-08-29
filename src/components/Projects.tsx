@@ -46,7 +46,7 @@ const projects = [
     description:
       "This project demonstrates deploying a modern static frontend application to Azure using infrastructure-as-code (IaC) with Terraform. The main focus is on cloud deployment, automation.",
     technologies: ["Azure", "GitHub actions", "Terraform"],
-    github: "https://github.com/Ofor-David/azure-frontend-deployment",
+    github: "https://github.com/Ofor-David/azure-frontend-deployment.git",
   },
 
   {
