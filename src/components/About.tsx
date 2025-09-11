@@ -65,10 +65,10 @@ const About = () => {
         >
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 transition-colors duration-300">
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              I am a passionate software developer with expertise in cloud infrastructure and DevOps practices. My journey in technology began with an interest in game development with Unity and C#, which later evolved into a deep interest in cloud computing and infrastructure automation.
+              I am a passionate and curious mind with expertise in cloud infrastructure and DevOps practices. My journey in technology began with an interest in game development with Unity and C#, which later evolved into a deep interest in cloud computing and infrastructure automation.
             </p>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              With experience in AWS, Terraform, and Docker, I specialize in building scalable and reliable cloud solutions. I believe in the power of automation and infrastructure as code to create efficient and maintainable systems.
+              With experience in AWS, Terraform, CI/CD and Containers, I specialize in building scalable and reliable cloud solutions. I believe in the power of automation and Infrastructure as Code(IaC) to create efficient and maintainable systems.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               When I'm not coding, I enjoy photography, playing the guitar, listening to cybersecurity podcasts and learning new technologies.

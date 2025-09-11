@@ -11,7 +11,7 @@ const skills = [
       { name: 'Github Actions', icon: 'githubactions' },
     ],
   },
-  {
+ /*  {
     category: 'AWS Services',
     items: [
       { name: 'EC2', icon: 'ec2' },
@@ -32,7 +32,7 @@ const skills = [
       { name: 'CloudTrail', icon: 'cloudtrail' },
       { name: 'CloudWatch', icon: 'cloudwatch' },
     ],
-  },
+  }, */
   {
     category: 'Development & Tools',
     items: [
@@ -73,7 +73,7 @@ const Skills = () => {
             Skills
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skills.map((category, index) => (
               <motion.div
                 key={index}

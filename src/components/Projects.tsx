@@ -35,64 +35,33 @@ const projects = [
     github: "https://github.com/Ofor-David/start-smart.git",
   },
   {
-    title: "The-Docker-Hardening-Project",
+    title: "Hashmark",
     description:
-      "This project demonstrates how to containerize a FastAPI application using Docker, then progressively harden the container image and secure the CI/CD pipeline using real-world DevSecOps practices.",
-    technologies: ["Docker", "GitHub actions", "Trivy", "Python", "FastApi"],
-    github: "https://github.com/Ofor-David/the-docker-hardening-project.git",
+      "HashMark is a lightweight, serverless platform that lets you prove a digital file existed at a specific point in time without revealing its contents.",
+    technologies: ["Azure Functions", "CI/CD", "Terraform", "Python"],
+    github: "https://github.com/Ofor-David/Hash-Mark.git",
   },
   {
-    title: "Azure-Frontend-Deployment",
-    description:
-      "This project demonstrates deploying a modern static frontend application to Azure using infrastructure-as-code (IaC) with Terraform. The main focus is on cloud deployment, automation.",
-    technologies: ["Azure", "GitHub actions", "Terraform"],
-    github: "https://github.com/Ofor-David/azure-frontend-deployment.git",
-  },
-
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS for a modern and responsive design.",
-    technologies: ["React", "Tailwind CSS", "TypeScript", "Cursor", "Netlify"],
-    github: "https://github.com/Ofor-David/portfolio-website.git",
-  },
-  {
-    title: "Serverless 3-Tier Application",
+    title: "MERN on AWS Lambda",
     description:
       "A serverless 3-Tier application deployed on AWS Lambda using Terraform, featuring JWT authentication, MongoDB Atlas integration, and scalable infrastructure.",
     technologies: ["Terraform", "AWS Lambda", "S3", "CloudFront", "MERN Stack"],
     github: "https://github.com/Ofor-David/serverless_mern_app",
   },
   {
-    title: "Task Management App",
+    title: "The-Docker-Hardening-Project",
     description:
-      "A containerized task management app with basic CRUD operations and user authentication. Deployed on EC2 with auto scaling and load balancing",
-    technologies: [
-      "Terraform",
-      "Nginx",
-      "Docker",
-      "EC2",
-      "ASG",
-      "ALB",
-      "S3",
-      "CloudFront",
-      "MERN Stack",
-    ],
-    github: "https://github.com/Ofor-David/TasksAPP",
+      "This project demonstrates how to containerize a FastAPI application using Docker, then progressively harden the container image and secure the CI/CD pipeline using real-world DevSecOps practices.",
+    technologies: ["Docker", "CI/CD", "Trivy", "Python", "FastApi"],
+    github: "https://github.com/Ofor-David/the-docker-hardening-project.git",
   },
+
   {
     title: "Bank Simulation App ",
     description:
       "A simple yet functional banking system written in Java that allows users to create and manage accounts, deposit and withdraw funds, view account balances and details, and track their complete transaction history. It's designed to simulate core banking operations in an intuitive and user-friendly way.",
     technologies: ["Java", "OOP"],
     github: "https://github.com/Ofor-David/Bank-Simulation-App",
-  },
-  {
-    title: "Linux Server Setup",
-    description:
-      "A Linux server setup and monitoring scriptfor a web application written in bash.",
-    technologies: ["Bash", "Linux"],
-    github: "https://github.com/Ofor-David/linux-server-automation",
   },
 ];
 

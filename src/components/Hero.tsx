@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
         >
-          Hi, I'm{' '}
+          Hi, I'm{" "}
           <span className="text-blue-600 dark:text-blue-400">Ofor David</span>
         </motion.h1>
         <motion.p
@@ -35,7 +35,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8"
         >
-          A passionate computer science student specializing in cloud infrastructure and DevOps
+          A curious mind with a strong passion backed by projects in Cloud Engineering, Cloud security and DevOps Engineering. As a cloud Engineer I enjoy building scalable and fault tolerant infrastructure, automating workflows, and securing Cloud Infrastructure.{" "}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
