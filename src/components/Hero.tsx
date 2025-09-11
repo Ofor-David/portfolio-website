@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   const handleViewResume = () => {
     window.open(
-      "https://docs.google.com/document/d/1mmEgm1L9uzQgD-xO8vcCXQh4xuyl3eYU/edit?usp=sharing&ouid=103229455657174150770&rtpof=true&sd=true",
+      "https://drive.google.com/file/d/1mQpOPq3EVJABT3LPEWZrsQ1YZ2ssqB1L/view?usp=sharing",
       "_blank"
     );
   };
