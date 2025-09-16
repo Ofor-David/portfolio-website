@@ -4,20 +4,31 @@ import { useInView } from 'react-intersection-observer';
 
 const certifications = [
   {
-    name: 'Google Cybersecurity Professional Certificate',
-    issuer: 'Google',
-    date: '2024',
-    credentialId: 'OD9USW8EZFTR',
-    icon: 'google',
-    verifyUrl: 'https://www.coursera.org/account/accomplishments/professional-cert/OD9USW8EZFTR',
+    name: "Introduction To Kubernetes(LFS158)",
+    issuer: "CNCF",
+    date: "2025",
+    credentialId: " LF-rm0kzq49cw",
+    icon: "cncf",
+    verifyUrl:
+      "https://www.credly.com/badges/83e1f7f6-907e-4354-a4e6-487ad3c67692",
   },
   {
-    name: 'Google AI Essentials',
-    issuer: 'Google',
-    date: '2024',
-    credentialId: 'JU70OB1JMUB1',
-    icon: 'google',
-    verifyUrl: 'https://www.coursera.org/account/accomplishments/verify/JU70OB1JMUB1',
+    name: "Google Cybersecurity Professional Certificate",
+    issuer: "Google",
+    date: "2024",
+    credentialId: "OD9USW8EZFTR",
+    icon: "google",
+    verifyUrl:
+      "https://www.coursera.org/account/accomplishments/professional-cert/OD9USW8EZFTR",
+  },
+  {
+    name: "Google AI Essentials",
+    issuer: "Google",
+    date: "2024",
+    credentialId: "JU70OB1JMUB1",
+    icon: "google",
+    verifyUrl:
+      "https://www.coursera.org/account/accomplishments/verify/JU70OB1JMUB1",
   },
 ];
 
