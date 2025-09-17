@@ -22,6 +22,15 @@ const certifications = [
       "https://www.coursera.org/account/accomplishments/professional-cert/OD9USW8EZFTR",
   },
   {
+    name: "Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services",
+    date: "2025",
+    credentialId: "XXXXX",
+    icon: "aws",
+    verifyUrl:
+      "https://drive.google.com/file/d/10ELnzqFT3vKTEXDtFiuaZDpxZQHLmDtO/view?usp=sharing",
+  },
+  {
     name: "Google AI Essentials",
     issuer: "Google",
     date: "2024",
@@ -109,9 +118,12 @@ const Certifications = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-1">
                     Issued: {cert.date}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Credential ID: {cert.credentialId}
-                  </p>
+                  {cert.credentialId && cert.credentialId.trim() !== "" && (
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      Credential ID: {cert.credentialId}
+                    </p>
+                  )}
+
                   {cert.verifyUrl && (
                     <a
                       href={cert.verifyUrl}
