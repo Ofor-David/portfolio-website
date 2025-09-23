@@ -5,10 +5,10 @@ import { useInView } from 'react-intersection-observer';
 const certifications = [
   {
     name: "Introduction To Kubernetes(LFS158)",
-    issuer: "CNCF",
+    issuer: "The Linux Foundation",
     date: "2025",
     credentialId: " LF-rm0kzq49cw",
-    icon: "cncf",
+    icon: "lf",
     verifyUrl:
       "https://www.credly.com/badges/83e1f7f6-907e-4354-a4e6-487ad3c67692",
   },
@@ -38,6 +38,15 @@ const certifications = [
     icon: "google",
     verifyUrl:
       "https://www.coursera.org/account/accomplishments/verify/JU70OB1JMUB1",
+  },
+  {
+    name: "Introducion to Linux(LFS101)",
+    issuer: "The Linux Foundation",
+    date: "2025",
+    credentialId: "JU70OB1JMUB1",
+    icon: "lf",
+    verifyUrl:
+      "https://www.credly.com/badges/ef034338-269f-45f2-bf86-4487e6a17ab9",
   },
 ];
 
